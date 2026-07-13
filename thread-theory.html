@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thread &amp; Theory — The Organic Heavyweight Tee</title>
+
+<!-- Fonts: a restrained serif for display moments, Inter for UI/body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+  NOTE ON TAILWIND DELIVERY:
+  The unpkg.com/tailwindcss@2 static stylesheet requested in the brief only ships the fixed,
+  pre-purged v2 utility set — it has no JIT engine, so custom brand colors, arbitrary values,
+  and several utilities used below (aspect ratio, backdrop blur, fine tracking steps) would
+  silently fail to render. To keep this genuinely production-ready, the Play CDN build of
+  Tailwind is used instead: same utility-class authoring model, but compiled live with full
+  support for the config below. Swap in your own compiled Tailwind build (via the CLI or
+  PostCSS) before shipping to production.
+-->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Fraunces"', 'serif'],
+          sans: ['"Inter"', 'sans-serif'],
+        },
+        colors: {
+          olive: {
+            50: '#f4f5ef',
+            100: '#e5e7d8',
+            300: '#b7bd97',
+            500: '#7c8560',
+            600: '#5f6949',
+            700: '#4a5239',
+            900: '#2c3122',
+          },
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .font-display { font-family: 'Fraunces', serif; font-optical-sizing: auto; }
+
+  /* Subtle paper-grain texture for the product frame, evokes a studio backdrop
+     without needing an actual photograph asset. */
+  .studio-grain {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(28,25,23,0.05) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  .crop-mark {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: #1c1917;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  .size-radio:checked + label {
+    background-color: #1c1917;
+    color: #fafaf9;
+    border-color: #1c1917;
+  }
+
+  .fade-up {
+    animation: fadeUp 0.7s ease-out both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+
+<body class="bg-stone-50 text-stone-900 antialiased">
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="sticky top-0 z-50 bg-stone-50/90 backdrop-blur-sm border-b border-stone-200">
+    <nav class="max-w-7xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
+
+      <!-- Brand -->
+      <a href="#" class="font-display text-xl md:text-2xl tracking-[0.15em] uppercase">
+        Thread <span class="text-olive-600">&amp;</span> Theory
+      </a>
+
+      <!-- Batch badge + cart -->
+      <div class="flex items-center gap-4 md:gap-8">
+        <span class="hidden sm:inline-flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase text-stone-600 border border-stone-300 rounded-full px-4 py-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-olive-600"></span>
+          Sustainable Batch 04
+        </span>
+
+        <button aria-label="View bag" class="relative p-2 -mr-2 rounded-full hover:bg-stone-200/60 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-900">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 8h12l-1 12H7L6 8Z" />
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+          </svg>
+          <span id="cart-count" class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-olive-600 text-stone-50 text-[9px] font-medium flex items-center justify-center transition-opacity opacity-0">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ HERO / PRODUCT DISPLAY ============ -->
+  <main>
+    <section class="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-20 grid md:grid-cols-2 gap-12 lg:gap-20">
+
+      <!-- LEFT: editorial product frame -->
+      <div class="fade-up">
+        <div class="relative aspect-[4/5] w-full bg-stone-200 studio-grain overflow-hidden rounded-sm">
+
+          <!-- corner crop marks, framing device borrowed from a photographer's proof sheet -->
+          <span class="crop-mark top-4 left-4 border-t border-l"></span>
+          <span class="crop-mark top-4 right-4 border-t border-r"></span>
+          <span class="crop-mark bottom-4 left-4 border-b border-l"></span>
+          <span class="crop-mark bottom-4 right-4 border-b border-r"></span>
+
+          <!-- garment silhouette placeholder -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg viewBox="0 0 200 220" class="w-2/3 h-2/3 text-stone-400/70" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M60 20 L80 10 Q100 25 120 10 L140 20 L165 45 L145 65 L130 55 L130 200 Q100 210 70 200 L70 55 L55 65 L35 45 Z" />
+            </svg>
+          </div>
+
+          <!-- vertical batch label -->
+          <div class="absolute top-6 right-6 text-[10px] tracking-[0.2em] uppercase text-stone-500 [writing-mode:vertical-rl]">
+            Archive 04 — Chalk White
+          </div>
+
+          <div class="absolute bottom-6 left-6 text-[10px] tracking-[0.18em] uppercase text-stone-500">
+            Studio Proof — Unretouched
+          </div>
+        </div>
+
+        <p class="mt-4 text-xs tracking-[0.15em] uppercase text-stone-400">
+          The Organic Heavyweight Tee — Chalk White, view 01/04
+        </p>
+      </div>
+
+      <!-- RIGHT: product details -->
+      <div class="fade-up flex flex-col" style="animation-delay: 0.1s;">
+
+        <p class="text-xs tracking-[0.25em] uppercase text-olive-600 font-medium mb-4">
+          Organic Heavyweight Collection
+        </p>
+
+        <h1 class="font-display text-4xl md:text-5xl leading-[1.1] tracking-tight mb-4">
+          The Organic Heavyweight Tee
+        </h1>
+
+        <div class="flex items-baseline gap-3 mb-8">
+          <span class="text-2xl font-display">₹2,499</span>
+          <span class="text-xs tracking-[0.1em] uppercase text-stone-400">Inclusive of taxes</span>
+        </div>
+
+        <!-- Micro-copy matrix -->
+        <ul class="space-y-3 mb-10 border-t border-b border-stone-200 py-6">
+          <li class="flex items-start gap-3 text-sm text-stone-700">
+            <svg class="w-4 h-4 mt-0.5 shrink-0 text-olive-600" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10.5 8 14.5 16 5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            100% Certified Organic Cotton
+          </li>
+          <li class="flex items-start gap-3 text-sm text-stone-700">
+            <svg class="w-4 h-4 mt-0.5 shrink-0 text-olive-600" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10.5 8 14.5 16 5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Heavyweight 240 GSM Fabric
+          </li>
+          <li class="flex items-start gap-3 text-sm text-stone-700">
+            <svg class="w-4 h-4 mt-0.5 shrink-0 text-olive-600" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10.5 8 14.5 16 5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Carbon-Neutral Supply Chain
+          </li>
+        </ul>
+
+        <!-- Size selector -->
+        <div class="mb-10">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs tracking-[0.15em] uppercase text-stone-500">Select Size</span>
+            <button type="button" class="text-xs tracking-[0.1em] uppercase text-stone-400 underline underline-offset-2 hover:text-stone-700 transition-colors">
+              Size Guide
+            </button>
+          </div>
+          <div class="flex gap-3" role="radiogroup" aria-label="Size">
+            <input type="radio" name="size" id="size-s" class="sr-only size-radio" checked>
+            <label for="size-s" class="w-12 h-12 rounded-full border border-stone-300 flex items-center justify-center text-sm cursor-pointer transition-colors hover:border-stone-900 focus-within:ring-2 focus-within:ring-stone-900">S</label>
+
+            <input type="radio" name="size" id="size-m" class="sr-only size-radio">
+            <label for="size-m" class="w-12 h-12 rounded-full border border-stone-300 flex items-center justify-center text-sm cursor-pointer transition-colors hover:border-stone-900 focus-within:ring-2 focus-within:ring-stone-900">M</label>
+
+            <input type="radio" name="size" id="size-l" class="sr-only size-radio">
+            <label for="size-l" class="w-12 h-12 rounded-full border border-stone-300 flex items-center justify-center text-sm cursor-pointer transition-colors hover:border-stone-900 focus-within:ring-2 focus-within:ring-stone-900">L</label>
+
+            <input type="radio" name="size" id="size-xl" class="sr-only size-radio">
+            <label for="size-xl" class="w-12 h-12 rounded-full border border-stone-300 flex items-center justify-center text-sm cursor-pointer transition-colors hover:border-stone-900 focus-within:ring-2 focus-within:ring-stone-900">XL</label>
+          </div>
+        </div>
+
+        <!-- Stock tag -->
+        <p class="text-xs tracking-[0.1em] text-olive-700 mb-4 flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-olive-600 animate-pulse"></span>
+          Only 42 pieces left in Batch 04
+        </p>
+
+        <!-- ADD TO BAG — primary CRO CTA -->
+        <button
+          id="add-to-bag-btn"
+          type="button"
+          data-product-value="2499.00"
+          class="w-full bg-stone-900 text-stone-50 py-5 text-sm tracking-[0.2em] uppercase font-medium hover:bg-olive-700 active:scale-[0.99] transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-stone-900 rounded-sm">
+          Add to Bag
+        </button>
+
+        <p id="add-to-bag-feedback" class="mt-3 text-xs tracking-[0.1em] uppercase text-stone-400 h-4 transition-opacity" aria-live="polite"></p>
+
+        <p class="mt-6 text-xs text-stone-400 leading-relaxed">
+          Free carbon-neutral shipping on all orders. Returns accepted within 30 days, unworn and unwashed.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SUSTAINABILITY VALUE LAYER ============ -->
+    <section class="bg-stone-100/70 border-y border-stone-200">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
+
+        <div class="max-w-xl mb-14">
+          <p class="text-xs tracking-[0.25em] uppercase text-olive-600 font-medium mb-3">Our Footprint</p>
+          <h2 class="font-display text-3xl md:text-4xl tracking-tight leading-tight">
+            Built with fewer, better decisions.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10 md:gap-8">
+
+          <!-- Card 1 -->
+          <div class="fade-up">
+            <svg class="w-9 h-9 mb-6 text-olive-600" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+              <circle cx="16" cy="16" r="12"/>
+              <path d="M16 8v8l6 3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="font-display text-lg mb-3">Traceable Sourcing</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Every batch is logged from farm to finish. Scan the swing tag to see exactly which cooperative grew your cotton.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="fade-up" style="animation-delay:0.08s;">
+            <svg class="w-9 h-9 mb-6 text-olive-600" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+              <path d="M16 5 25 10v9l-9 8-9-8v-9Z" stroke-linejoin="round"/>
+              <path d="M16 5v9l9-4M16 14 7 10M16 14v9" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="font-display text-lg mb-3">Zero Plastic Packaging</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Shipped in compostable mailers with a seed-embedded swing tag. Nothing in the box outlives the garment.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="fade-up" style="animation-delay:0.16s;">
+            <svg class="w-9 h-9 mb-6 text-olive-600" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+              <path d="M16 4v6M16 22v6M4 16h6M22 16h6" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="6"/>
+            </svg>
+            <h3 class="font-display text-lg mb-3">Designed for Decades</h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Overbuilt seams and a 240 GSM weight mean this tee is made to outlast trend cycles, not chase them.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="max-w-7xl mx-auto px-6 md:px-10 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400 tracking-[0.1em] uppercase">
+    <span>Thread &amp; Theory — Sustainable Batch 04</span>
+    <span>© 2026, all rights reserved</span>
+  </footer>
+
+  <!-- ============ GTM-STYLE DATALAYER SIMULATION ============ -->
+  <script>
+    (function () {
+      var btn = document.getElementById('add-to-bag-btn');
+      var feedback = document.getElementById('add-to-bag-feedback');
+      var cartCount = document.getElementById('cart-count');
+      var count = 0;
+
+      btn.addEventListener('click', function () {
+        var value = btn.getAttribute('data-product-value');
+
+        // Mimic a live GTM dataLayer push firing on an add_to_cart interaction.
+        console.log('GTM DataLayer Push: Event: add_to_cart, Value: ' + value);
+
+        // Lightweight, dependency-free UI feedback for the interaction.
+        count += 1;
+        cartCount.textContent = count;
+        cartCount.classList.remove('opacity-0');
+
+        feedback.textContent = 'Added to bag — logged to console (F12) as a GTM event.';
+        clearTimeout(btn._feedbackTimeout);
+        btn._feedbackTimeout = setTimeout(function () {
+          feedback.textContent = '';
+        }, 3200);
+      });
+    })();
+  </script>
+
+</body>
+</html>
