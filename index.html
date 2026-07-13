@@ -463,14 +463,57 @@ window.dataLayer.push<span>(</span><span>{</span>
     </div>
   </div>
 
-  <!-- ORIGINAL DRAWER 2: Hidden container for future Tracking Flow Diagram/Code if needed -->
-  <div id="pixel-drawer" class="hidden border-t border-line bg-black/40 p-6 transition-all duration-300">
-    <div class="border border-line rounded-lg overflow-hidden max-w-4xl mx-auto bg-panel p-6 shadow-2xl">
-      <h4 class="text-white font-bold text-base font-mono mb-2">Tracking Architecture Framework</h4>
-      <p class="text-zinc-400 text-xs font-mono leading-relaxed">
-        The application pushes clean transactional parameters onto the global window object. This allows Google Tag Manager to listen dynamically for custom triggers, forwarding server-side server event hits to Meta Ads Manager to suppress attribution drop-off thresholds.
+  <!-- DRAWER 2: Hidden container for Tracking Flow & Architecture Map -->
+<div id="pixel-drawer" class="hidden border-t border-line bg-black/40 p-6 transition-all duration-300">
+  <div class="border border-line rounded-lg overflow-hidden max-w-4xl mx-auto bg-panel p-6 shadow-2xl space-y-6">
+    
+    <!-- Title & Subtitle -->
+    <div>
+      <h4 class="text-white font-bold text-base font-mono">Programmatic Tracking & Attribution Pipeline</h4>
+      <p class="text-zinc-400 text-xs mt-1">Architecture map detailing how client-side user interactions are captured, cleaned, and dispatched to marketing APIs.</p>
+    </div>
+
+    <!-- Visual Pipeline Blocks -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-2 font-mono text-xs">
+      
+      <!-- Step 1 -->
+      <div class="border border-line bg-[#16161a] p-4 space-y-2 relative">
+        <span class="text-[10px] text-zinc-600 block">STAGE 01</span>
+        <h5 class="text-blue-400 font-bold">Client UI Event</h5>
+        <p class="text-zinc-400 text-[11px] leading-relaxed">User clicks "Add to Bag" on the minimalist apparel landing page.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="border border-line bg-[#16161a] p-4 space-y-2 relative">
+        <span class="text-[10px] text-zinc-600 block">STAGE 02</span>
+        <h5 class="text-orange-400 font-bold">Data Layer Push</h5>
+        <p class="text-zinc-400 text-[11px] leading-relaxed">Custom JavaScript pushes product array `value`, `currency`, and `item_id` into `window.dataLayer` dynamically.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="border border-line bg-[#16161a] p-4 space-y-2 relative">
+        <span class="text-[10px] text-zinc-600 block">STAGE 03</span>
+        <h5 class="text-yellow-400 font-bold">GTM Triggers</h5>
+        <p class="text-zinc-400 text-[11px] leading-relaxed">Google Tag Manager custom event listener catches the push, scraping variables natively without page reloads.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="border border-line bg-[#16161a] p-4 space-y-2 relative">
+        <span class="text-[10px] text-zinc-600 block">STAGE 04</span>
+        <h5 class="text-green-400 font-bold">Platform Dispatch</h5>
+        <p class="text-zinc-400 text-[11px] leading-relaxed">Tags fire server-side and browser-side hooks to map data into Meta Ads Manager and GA4 for deduped attribution.</p>
+      </div>
+
+    </div>
+
+    <!-- Technical Note Callout Box -->
+    <div class="bg-zinc-900/40 border-l-2 border-signal p-4">
+      <h6 class="text-white font-mono text-xs font-bold mb-1">Architectural Focus: Signal Integrity</h6>
+      <p class="text-zinc-400 font-mono text-[11px] leading-relaxed">
+        By implementing a standardized data layer structure instead of scraping raw DOM text elements, the tracking pipeline remains resilient against front-end design updates. This ensures absolute accuracy for algorithmic bidding optimizations within Meta Ads Manager.
       </p>
     </div>
+
   </div>
 </div>
 
