@@ -6,30 +6,8 @@
 <title>Karthik Nargolikar — Digital Marketing Executive</title>
 <meta name="description" content="Karthik Nargolikar — Digital Marketing Executive from Bengaluru, building skills across WordPress, campaign strategy, and technical marketing tools including GTM, GA4, and Meta Ads." />
 
-<!-- Tailwind CSS (CDN, configured) -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ink: '#09090b',
-          panel: '#0f0f12',
-          line: '#242428',
-          signal: '#ff5a1f',   // electric orange
-          circuit: '#2f8fff',  // electric blue
-        },
-        fontFamily: {
-          sans: ['"Inter"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
-        },
-        backgroundImage: {
-          'grid-fade': 'linear-gradient(to bottom, rgba(9,9,11,0) 0%, rgba(9,9,11,1) 92%)',
-        },
-      },
-    },
-  };
-</script>
+<!-- Modern Compiled Production Styling Engine -->
+<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +24,20 @@
     background-position: -1px -1px;
   }
   ::selection { background: #ff5a1f; color: #09090b; }
+
+  /* Tailwind Custom Variable Backports */
+  .bg-ink { background-color: #09090b; }
+  .bg-panel { background-color: #0f0f12; }
+  .border-line { border-color: #242428; }
+  .bg-line { background-color: #242428; }
+  .text-signal { color: #ff5a1f; }
+  .bg-signal { background-color: #ff5a1f; }
+  .hover\:border-circuit:hover { border-color: #2f8fff; }
+  .hover\:text-circuit:hover { color: #2f8fff; }
+  .text-circuit { color: #2f8fff; }
+  .bg-circuit { background-color: #2f8fff; }
+  .selection\:bg-signal::selection { background-color: #ff5a1f; }
+  .selection\:text-ink::selection { color: #09090b; }
 
   .scanline-btn { position: relative; overflow: hidden; }
   .scanline-btn::after {
@@ -84,13 +76,13 @@
 <body class="text-white font-sans antialiased selection:bg-signal selection:text-ink">
 
 <!-- ================= NAV ================= -->
-<header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-ink/80 backdrop-blur-md">
+<header class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-ink bg-opacity-80 backdrop-filter backdrop-blur-md">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="#top" class="font-mono text-sm font-semibold tracking-tight text-white">
-      KN<span class="text-signal">.</span><span class="text-zinc-500">dev</span>
+      KN<span class="text-signal">.</span><span class="text-zinc-500 text-gray-500">dev</span>
     </a>
 
-    <div class="hidden md:flex items-center gap-8 font-mono text-[13px] uppercase tracking-widest text-zinc-400">
+    <div class="hidden md:flex items-center gap-8 font-mono text-[13px] uppercase tracking-widest text-gray-400">
       <a href="#stack" class="hover:text-white transition-colors">Stack</a>
       <a href="#projects" class="hover:text-white transition-colors">Case&nbsp;Studies</a>
       <a href="#history" class="hover:text-white transition-colors">History</a>
@@ -98,12 +90,12 @@
     </div>
 
     <a href="https://www.linkedin.com/in/karthik-nargolikar" target="_blank" rel="noopener noreferrer"
-       class="hidden md:inline-flex items-center gap-2 border border-line hover:border-circuit text-zinc-200 hover:text-circuit text-[13px] font-mono px-4 py-2 transition-colors">
+       class="hidden md:inline-flex items-center gap-2 border border-line hover:border-circuit text-gray-200 hover:text-circuit text-[13px] font-mono px-4 py-2 transition-colors">
       LinkedIn ↗
     </a>
 
     <!-- mobile toggle -->
-    <button id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden text-zinc-300 hover:text-white p-2 -mr-2">
+    <button id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden text-gray-300 hover:text-white p-2 -mr-2">
       <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -114,8 +106,8 @@
   </nav>
 
   <!-- mobile menu -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-ink/95 backdrop-blur-md">
-    <div class="px-6 py-5 flex flex-col gap-4 font-mono text-sm uppercase tracking-widest text-zinc-300">
+  <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-ink bg-opacity-95 backdrop-filter backdrop-blur-md">
+    <div class="px-6 py-5 flex flex-col gap-4 font-mono text-sm uppercase tracking-widest text-gray-300">
       <a href="#stack" class="mobile-link hover:text-white transition-colors">Stack</a>
       <a href="#projects" class="mobile-link hover:text-white transition-colors">Case Studies</a>
       <a href="#history" class="mobile-link hover:text-white transition-colors">History</a>
@@ -127,12 +119,10 @@
 
 <!-- ================= HERO ================= -->
 <section id="top" class="relative pt-40 pb-28 md:pt-52 md:pb-36 px-6 overflow-hidden">
-  <div class="absolute inset-0 bg-grid-fade pointer-events-none"></div>
-  <div class="absolute -top-24 right-0 w-[420px] h-[420px] bg-circuit/10 blur-[120px] rounded-full pointer-events-none"></div>
-  <div class="absolute -top-10 left-0 w-[320px] h-[320px] bg-signal/10 blur-[110px] rounded-full pointer-events-none"></div>
+  <div class="absolute inset-0 bg-zinc-950 bg-opacity-90 pointer-events-none"></div>
 
   <div class="max-w-6xl mx-auto relative">
-    <div class="fade-up flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-zinc-500 mb-8">
+    <div class="fade-up flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-gray-500 mb-8">
       <span class="h-1.5 w-1.5 rounded-full bg-signal blink"></span>
       Bengaluru, IN · Open to Digital Marketing &amp; Technical Marketing roles
     </div>
@@ -141,13 +131,13 @@
       Karthik Nargolikar
     </h1>
 
-    <p class="fade-up mt-6 text-lg md:text-xl text-zinc-300 max-w-3xl leading-relaxed" style="animation-delay:.12s">
-      Digital Marketing Executive <span class="text-zinc-600">|</span> Working across WordPress, campaign strategy, and landing pages — currently building technical marketing skills in GTM, GA4, and Meta Ads.
+    <p class="fade-up mt-6 text-lg md:text-xl text-gray-300 max-w-3xl leading-relaxed" style="animation-delay:.12s">
+      Digital Marketing Executive <span class="text-gray-600">|</span> Working across WordPress, campaign strategy, and landing pages — currently building technical marketing skills in GTM, GA4, and Meta Ads.
     </p>
 
-    <p class="fade-up mt-5 text-zinc-500 max-w-2xl leading-relaxed border-l-2 border-line pl-4" style="animation-delay:.18s">
+    <p class="fade-up mt-5 text-gray-500 max-w-2xl leading-relaxed border-l-2 border-line pl-4" style="animation-delay:.18s">
       I come from a content and campaign execution background and I'm deliberately growing into the technical side of marketing — tracking, automation, and data — through Google's Professional Digital Marketing Certification and hands-on
-      <span class="text-zinc-300 font-medium"> practice projects</span>.
+      <span class="text-gray-300 font-medium"> practice projects</span>.
     </p>
 
     <div class="fade-up mt-10 flex flex-wrap items-center gap-4" style="animation-delay:.24s">
@@ -157,7 +147,7 @@
         <span aria-hidden="true">→</span>
       </a>
       <a href="https://www.linkedin.com/in/karthik-nargolikar" target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center gap-2 border border-line hover:border-circuit text-zinc-200 hover:text-circuit font-medium px-6 py-3.5 text-sm tracking-wide transition-colors">
+         class="inline-flex items-center gap-2 border border-line hover:border-circuit text-gray-200 hover:text-circuit font-medium px-6 py-3.5 text-sm tracking-wide transition-colors">
         Connect on LinkedIn ↗
       </a>
     </div>
@@ -172,15 +162,15 @@
         <p class="font-mono text-xs uppercase tracking-[0.25em] text-circuit mb-3">Current Toolkit</p>
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Skills &amp; Learning Path</h2>
       </div>
-      <p class="text-zinc-500 max-w-sm text-sm leading-relaxed">What I can do today, and what I'm actively building toward — no gaps hidden.</p>
+      <p class="text-gray-500 max-w-sm text-sm leading-relaxed">What I can do today, and what I'm actively building toward — no gaps hidden.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line">
       <!-- Web & Content -->
       <div class="stack-card bg-panel p-7 hover:bg-zinc-900 border-t-2 border-transparent hover:border-signal">
-        <span class="font-mono text-xs text-zinc-600">01</span>
+        <span class="font-mono text-xs text-gray-600">01</span>
         <h3 class="mt-4 font-semibold text-lg text-white">Web &amp; Content</h3>
-        <ul class="mt-4 space-y-2.5 text-sm text-zinc-400 leading-relaxed">
+        <ul class="mt-4 space-y-2.5 text-sm text-gray-400 leading-relaxed">
           <li>WordPress site building</li>
           <li>HTML / CSS customization</li>
           <li>Landing page creation</li>
@@ -189,9 +179,9 @@
       </div>
       <!-- Campaigns & SEO -->
       <div class="stack-card bg-panel p-7 hover:bg-zinc-900 border-t-2 border-transparent hover:border-circuit">
-        <span class="font-mono text-xs text-zinc-600">02</span>
+        <span class="font-mono text-xs text-gray-600">02</span>
         <h3 class="mt-4 font-semibold text-lg text-white">Campaigns &amp; SEO</h3>
-        <ul class="mt-4 space-y-2.5 text-sm text-zinc-400 leading-relaxed">
+        <ul class="mt-4 space-y-2.5 text-sm text-gray-400 leading-relaxed">
           <li>Google Ads campaign planning</li>
           <li>SEO fundamentals</li>
           <li>Campaign strategy &amp; briefs</li>
@@ -199,9 +189,9 @@
       </div>
       <!-- Automation -->
       <div class="stack-card bg-panel p-7 hover:bg-zinc-900 border-t-2 border-transparent hover:border-signal">
-        <span class="font-mono text-xs text-zinc-600">03</span>
+        <span class="font-mono text-xs text-gray-600">03</span>
         <h3 class="mt-4 font-semibold text-lg text-white">Automation</h3>
-        <ul class="mt-4 space-y-2.5 text-sm text-zinc-400 leading-relaxed">
+        <ul class="mt-4 space-y-2.5 text-sm text-gray-400 leading-relaxed">
           <li>Power Automate Desktop</li>
           <li>Basic workflow automation</li>
           <li>Process documentation</li>
@@ -209,21 +199,21 @@
       </div>
       <!-- Currently Learning -->
       <div class="stack-card bg-panel p-7 hover:bg-zinc-900 border-t-2 border-transparent hover:border-circuit">
-        <span class="font-mono text-xs text-zinc-600">04</span>
+        <span class="font-mono text-xs text-gray-600">04</span>
         <h3 class="mt-4 font-semibold text-lg text-white">Currently Learning</h3>
-        <ul class="mt-4 space-y-2.5 text-sm text-zinc-400 leading-relaxed">
+        <ul class="mt-4 space-y-2.5 text-sm text-gray-400 leading-relaxed">
           <li>Google Tag Manager (GTM)</li>
           <li>Google Analytics 4 (GA4)</li>
           <li>Looker Studio &amp; Meta Ads</li>
         </ul>
-        <p class="mt-4 text-[11px] font-mono text-zinc-600">via Google Professional Digital Marketing Certification</p>
+        <p class="mt-4 text-[11px] font-mono text-gray-600">via Google Professional Digital Marketing Certification</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= PROJECTS / CASE STUDY ================= -->
-<section id="projects" class="px-6 py-24 border-t border-white/5 bg-panel/40">
+<section id="projects" class="px-6 py-24 border-t border-white/5 bg-panel bg-opacity-40">
   <div class="max-w-6xl mx-auto">
     <div class="mb-14">
       <p class="font-mono text-xs uppercase tracking-[0.25em] text-signal mb-3">Practice Case Study</p>
@@ -231,57 +221,57 @@
     </div>
 
     <!-- Project 01 Card -->
-    <div class="border border-line bg-ink/60">
+    <div class="border border-line bg-ink bg-opacity-60 mb-12">
       <!-- header -->
       <div class="flex flex-wrap items-center justify-between gap-4 px-6 md:px-10 py-6 border-b border-line">
         <div class="flex items-center gap-3">
-          <span class="font-mono text-xs text-signal border border-signal/40 px-2 py-1">PROJECT 01</span>
+          <span class="font-mono text-xs text-signal border border-signal border-opacity-40 px-2 py-1">PROJECT 01</span>
           <h3 class="text-xl md:text-2xl font-bold text-white">Brew Haven — Hyper-Local Performance Funnel</h3>
         </div>
-        <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Status: Concept Project</span>
+        <span class="font-mono text-[11px] uppercase tracking-widest text-gray-500">Status: Concept Project</span>
       </div>
 
       <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
         <!-- Left: narrative -->
         <div class="space-y-8">
-          <p class="text-xs text-zinc-500 leading-relaxed bg-panel border border-line px-4 py-3">
+          <p class="text-xs text-gray-500 leading-relaxed bg-panel border border-line px-4 py-3">
             This is a self-directed learning project built to practice campaign thinking and measurement planning — not a live client engagement. The scenario is realistic; the business is fictional.
           </p>
           <div>
-            <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-2">Scenario</p>
-            <p class="text-zinc-300 leading-relaxed">A neighborhood café sees strong weekend footfall but empty seats on weekdays, while nearby remote workers looking for a workspace go untapped.</p>
+            <p class="font-mono text-xs uppercase tracking-widest text-gray-500 mb-2">Scenario</p>
+            <p class="text-gray-300 leading-relaxed">A neighborhood café sees strong weekend footfall but empty seats on weekdays, while nearby remote workers looking for a workspace go untapped.</p>
           </div>
           <div>
-            <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-2">Proposed Approach</p>
+            <p class="font-mono text-xs uppercase tracking-widest text-gray-500 mb-2">Proposed Approach</p>
             <p class="text-zinc-300 leading-relaxed">A hyper-local landing page and ₹499 weekday workspace pass, paired with a measurement plan I designed to practice mapping conversion events to GTM and GA4 as I learn the tools.</p>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2">
             <a href="https://brewhavenproject.netlify.app/" target="_blank" rel="noopener noreferrer"
                class="scanline-btn inline-flex items-center justify-center gap-2 bg-circuit text-ink font-semibold px-6 py-3.5 text-sm tracking-wide hover:bg-blue-400 transition-colors">
               View Demo Prototype
               <span aria-hidden="true">→</span>
             </a>
-            <a href="#dashboard"
-               class="inline-flex items-center justify-center gap-2 border border-line hover:border-signal text-zinc-200 hover:text-signal font-medium px-6 py-3.5 text-sm tracking-wide transition-colors">
+            <button onclick="document.getElementById('measurement-drawer').classList.toggle('hidden')" class="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center focus:outline-none">
               View Proposed Measurement Plan
-            </a>
+              <svg class="w-4 h-4 ml-1 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
           </div>
         </div>
 
         <!-- Right: code editor -->
-        <div class="border border-line bg-[#0b0b0e]">
+        <div class="border border-line bg-black">
           <div class="flex items-center gap-2 px-4 py-3 border-b border-line bg-panel">
-            <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
-            <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
-            <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
-            <span class="ml-3 font-mono text-[11px] text-zinc-500">measurement-plan.js — concept, not deployed</span>
+            <span class="h-2.5 w-2.5 rounded-full bg-gray-700"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-gray-700"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-gray-700"></span>
+            <span class="ml-3 font-mono text-[11px] text-gray-500">measurement-plan.js — concept, not deployed</span>
           </div>
           <pre class="p-5 overflow-x-auto text-[13px] leading-relaxed font-mono"><code data-hl><span class="com">// Brew Haven — practice project</span>
 <span class="com">// Draft event structure, written while learning GTM/GA4</span>
 <span class="com">// fundamentals. Not implemented in a live container.</span>
 
-<span class="kw">const</span> plannedEvent <span class="punc">=</span> <span class="punc">{</span>
+<span class="kw">const plannedEvent</span> <span class="punc">=</span> <span class="punc">{</span>
   <span class="prop">event</span><span class="punc">:</span> <span class="str">'lead_conversion'</span><span class="punc">,</span>
   <span class="prop">business_location</span><span class="punc">:</span> <span class="str">'Indiranagar, BLR'</span><span class="punc">,</span>
   <span class="prop">lead_type</span><span class="punc">:</span> <span class="str">'Weekday Pass Coupon'</span><span class="punc">,</span>
@@ -289,12 +279,82 @@
 <span class="punc">};</span>
 
 <span class="com">// Next: push this to dataLayer once GTM setup is confirmed</span></code></pre>
-          <div id="dashboard" class="px-5 py-4 border-t border-line">
-            <p class="text-xs text-zinc-500 font-mono leading-relaxed">Planned stack: GTM container → GA4 event → Looker Studio report. This is the tracking architecture I'm learning to build, sketched out here as practice — no live container or dashboard exists for this project yet.</p>
+          <div class="px-5 py-4 border-t border-line">
+            <p class="text-xs text-gray-500 font-mono leading-relaxed">Planned stack: GTM container → GA4 event → Looker Studio report. This is the tracking architecture I'm learning to build, sketched out here as practice — no live container or dashboard exists for this project yet.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expandable Image Drawer Asset Container -->
+      <div id="measurement-drawer" class="hidden border-t border-line w-full bg-zinc-950 p-6 md:p-10">
+        <div class="border border-line rounded-xl overflow-hidden shadow-2xl bg-black max-w-4xl mx-auto">
+          <div class="bg-[#18181b] px-4 py-2.5 border-b border-line flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-gray-700"></div>
+            <div class="w-3 h-3 rounded-full bg-gray-700"></div>
+            <div class="w-3 h-3 rounded-full bg-gray-700"></div>
+            <span class="text-[10px] font-mono text-gray-500 ml-3 tracking-widest uppercase">brew-haven-dashboard.jpg</span>
+          </div>
+          <img src="brew-haven-dashboard.jpg" alt="Measurement Plan Funnel Analytics Dashboard Mockup" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300">
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 02 Card: Thread & Theory -->
+    <div class="border border-line bg-ink bg-opacity-60">
+      <div class="flex flex-wrap items-center justify-between gap-4 px-6 md:px-10 py-6 border-b border-line">
+        <div class="flex items-center gap-3">
+          <span class="font-mono text-xs text-signal border border-signal border-opacity-40 px-2 py-1">PROJECT 02</span>
+          <h3 class="text-xl md:text-2xl font-bold text-white">Thread &amp; Theory — Premium DTC Apparel Lander</h3>
+        </div>
+        <span class="font-mono text-[11px] uppercase tracking-widest text-gray-500">Status: Production Live</span>
+      </div>
+
+      <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="space-y-8">
+          <p class="text-xs text-gray-500 leading-relaxed bg-panel border border-line px-4 py-3">
+            A high-converting single-product e-commerce experience designed for a premium sustainable clothing label. Focused completely on conversion flow mechanics, clean asset layouts, and programmatic checkout tracking.
+          </p>
+          <div>
+            <p class="font-mono text-xs uppercase tracking-widest text-gray-500 mb-2">Strategy &amp; Metrics Focus</p>
+            <p class="text-gray-300 leading-relaxed">Engineered explicitly to capture modern ad traffic. Structured with strict layout minimalism to reduce visual friction, maximize Average Order Value (AOV), and establish robust dynamic attribution mapping.</p>
+          </div>
+
+          <div class="pt-2">
+            <a href="thread-theory.html" class="scanline-btn inline-flex items-center justify-center gap-2 bg-circuit text-ink font-semibold px-6 py-3.5 text-sm tracking-wide hover:bg-blue-400 transition-colors">
+              Open Live E-com Lander
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-between border border-line bg-black p-6 font-mono text-xs text-gray-400">
+          <div>
+            <div class="flex items-center justify-between pb-2 border-b border-line mb-4 text-gray-500">
+              <span>📊 eCom GTM Tracking Architecture</span>
+              <span class="text-signal font-bold">active</span>
+            </div>
+            <p class="text-[11px] text-gray-500 mb-3">// Custom interaction pushes item parameter frames directly to dataLayer</p>
+            <pre class="overflow-x-auto text-[12px] text-gray-300 leading-relaxed">window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'add_to_cart',
+  'ecommerce': {
+    'currency': 'INR',
+    'value': 2499.00,
+    'items': [{
+      'item_name': 'The Organic Heavyweight Tee',
+      'price': 2499.00,
+      'quantity': 1
+    }]
+  }
+});</pre>
+          </div>
+          <div class="mt-4 pt-4 border-t border-line text-[11px] text-gray-500">
+            Attribution Strategy: Meta Conversion API Tag + Google Analytics 4 integration parameters.
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -314,8 +374,8 @@
         <span class="timeline-dot absolute -left-8 md:-left-10 top-1.5 h-2.5 w-2.5 rounded-full bg-signal"></span>
         <p class="font-mono text-xs uppercase tracking-widest text-signal mb-1">Jun 2026 — Present</p>
         <h3 class="text-lg md:text-xl font-semibold text-white">Digital Marketing Executive</h3>
-        <p class="text-zinc-500 text-sm mb-3">Bhoomee Digital Services</p>
-        <p class="text-zinc-400 leading-relaxed max-w-2xl">Handling day-to-day digital marketing execution for Bengaluru-based clients, including campaign coordination, content, and web updates.</p>
+        <p class="text-gray-500 text-sm mb-3">Bhoomee Digital Services</p>
+        <p class="text-gray-400 leading-relaxed max-w-2xl">Handling day-to-day digital marketing execution for Bengaluru-based clients, including campaign coordination, content, and web updates.</p>
       </div>
 
       <!-- Item 2 -->
@@ -323,8 +383,8 @@
         <span class="timeline-dot absolute -left-8 md:-left-10 top-1.5 h-2.5 w-2.5 rounded-full bg-circuit"></span>
         <p class="font-mono text-xs uppercase tracking-widest text-circuit mb-1">Jan 2026 — Jun 2026</p>
         <h3 class="text-lg md:text-xl font-semibold text-white">Web Developer &amp; Marketing Executive</h3>
-        <p class="text-zinc-500 text-sm mb-3">Canopus Wet Wipes Pvt Ltd</p>
-        <p class="text-zinc-400 leading-relaxed max-w-2xl">Built and maintained the company website on WordPress, and supported marketing efforts aimed at reaching B2B buyers.</p>
+        <p class="text-gray-500 text-sm mb-3">Canopus Wet Wipes Pvt Ltd</p>
+        <p class="text-gray-400 leading-relaxed max-w-2xl">Built and maintained the company website on WordPress, and supported marketing efforts aimed at reaching B2B buyers.</p>
       </div>
 
       <!-- Item 3 -->
@@ -332,8 +392,8 @@
         <span class="timeline-dot absolute -left-8 md:-left-10 top-1.5 h-2.5 w-2.5 rounded-full bg-signal"></span>
         <p class="font-mono text-xs uppercase tracking-widest text-signal mb-1">Mar 2025 — Jun 2025</p>
         <h3 class="text-lg md:text-xl font-semibold text-white">Digital Marketing Executive</h3>
-        <p class="text-zinc-500 text-sm mb-3">EduCADD Learning Solutions</p>
-        <p class="text-zinc-400 leading-relaxed max-w-2xl">Created content and short-form reels to support course marketing, and learned the fundamentals of promoting training programs.</p>
+        <p class="text-gray-500 text-sm mb-3">EduCADD Learning Solutions</p>
+        <p class="text-gray-400 leading-relaxed max-w-2xl">Created content and short-form reels to support course marketing, and learned the fundamentals of promoting training programs.</p>
       </div>
 
       <!-- Item 4 -->
@@ -341,15 +401,15 @@
         <span class="timeline-dot absolute -left-8 md:-left-10 top-1.5 h-2.5 w-2.5 rounded-full bg-circuit"></span>
         <p class="font-mono text-xs uppercase tracking-widest text-circuit mb-1">Sep 2024 — Feb 2025</p>
         <h3 class="text-lg md:text-xl font-semibold text-white">RPA Developer Intern</h3>
-        <p class="text-zinc-500 text-sm mb-3">Technodysis</p>
-        <p class="text-zinc-400 leading-relaxed max-w-2xl">Built simple workflow automation bots using Power Automate Desktop, learning the basics of process automation.</p>
+        <p class="text-gray-500 text-sm mb-3">Technodysis</p>
+        <p class="text-gray-400 leading-relaxed max-w-2xl">Built simple workflow automation bots using Power Automate Desktop, learning the basics of process automation.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= CONTACT / CTA STRIP ================= -->
-<section id="contact" class="px-6 py-24 border-t border-white/5 bg-panel/40">
+<section id="contact" class="px-6 py-24 border-t border-white/5 bg-panel bg-opacity-40">
   <div class="max-w-6xl mx-auto text-center">
     <p class="font-mono text-xs uppercase tracking-[0.25em] text-signal mb-4">Let's Talk</p>
     <h2 class="text-3xl md:text-5xl font-bold tracking-tight max-w-2xl mx-auto leading-tight">
@@ -361,8 +421,8 @@
         karthik.nargolikar@gmail.com
       </a>
       <a href="https://www.linkedin.com/in/karthik-nargolikar" target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center gap-2 border border-line hover:border-circuit text-zinc-200 hover:text-circuit font-medium px-6 py-3.5 text-sm tracking-wide transition-colors">
-        LinkedIn ↗
+         class="inline-flex items-center gap-2 border border-line hover:border-circuit text-gray-200 hover:text-circuit font-medium px-6 py-3.5 text-sm tracking-wide transition-colors">
+        Connect on LinkedIn ↗
       </a>
     </div>
   </div>
@@ -372,16 +432,16 @@
 <footer class="px-6 py-12 border-t border-white/5">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
     <a href="#top" class="font-mono text-sm font-semibold text-white">
-      KN<span class="text-signal">.</span><span class="text-zinc-500">dev</span>
+      KN<span class="text-signal">.</span><span class="text-zinc-500 text-gray-500">dev</span>
     </a>
 
-    <p class="text-zinc-500 text-sm text-center font-mono">
+    <p class="text-gray-500 text-sm text-center font-mono">
       Bengaluru, India &nbsp;|&nbsp;
       <a href="mailto:karthik.nargolikar@gmail.com" class="hover:text-circuit transition-colors">karthik.nargolikar@gmail.com</a>
       &nbsp;|&nbsp; +91 9591111724
     </p>
 
-    <p class="text-zinc-600 text-xs font-mono">&copy; 2026 Karthik Nargolikar</p>
+    <p class="text-gray-600 text-xs font-mono">&copy; 2026 Karthik Nargolikar</p>
   </div>
 </footer>
 
