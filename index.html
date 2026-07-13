@@ -230,80 +230,128 @@
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Performance Marketing Funnels</h2>
     </div>
 
-    <!-- Project 01 Card: Brew Haven -->
-    <div class="border border-line bg-ink/60">
-      <!-- header -->
-      <div class="flex flex-wrap items-center justify-between gap-4 px-6 md:px-10 py-6 border-b border-line">
-        <div class="flex items-center gap-3">
-          <span class="font-mono text-xs text-signal border border-signal/40 px-2 py-1">PROJECT 01</span>
-          <h3 class="text-xl md:text-2xl font-bold text-white">Brew Haven — Hyper-Local Performance Funnel</h3>
-        </div>
-        <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Status: Concept Project</span>
+   <div class="border border-line bg-ink/60">
+  <div class="flex flex-wrap items-center justify-between gap-4 px-6 md:px-10 py-6 border-b border-line">
+    <div class="flex items-center gap-3">
+      <span class="font-mono text-xs text-signal border border-signal/40 px-2 py-1">PROJECT 01</span>
+      <h3 class="text-xl md:text-2xl font-bold text-white">Brew Haven — Hyper-Local Performance Funnel</h3>
+    </div>
+    <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Status: Concept Project</span>
+  </div>
+
+  <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div class="space-y-8">
+      <p class="text-xs text-zinc-500 leading-relaxed bg-panel border border-line px-4 py-3">
+        This is a self-directed learning project built to practice campaign thinking, paid media mapping, and measurement planning — not a live client engagement. The scenario is realistic; the business is fictional.
+      </p>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-2">Scenario</p>
+        <p class="text-zinc-300 leading-relaxed">A neighborhood café sees strong weekend footfall but empty seats on weekdays, while nearby remote workers looking for a workspace go untapped.</p>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-2">Proposed Approach</p>
+        <p class="text-zinc-300 leading-relaxed">A hyper-local landing page and ₹499 weekday workspace pass, paired with an intent-driven Google Ads matrix and a measurement architecture tracking custom events to GTM and GA4.</p>
       </div>
 
-      <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <!-- Left: narrative -->
-        <div class="space-y-8">
-          <p class="text-xs text-zinc-500 leading-relaxed bg-panel border border-line px-4 py-3">
-            This is a self-directed learning project built to practice campaign thinking and measurement planning — not a live client engagement. The scenario is realistic; the business is fictional.
-          </p>
-          <div>
-            <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-2">Scenario</p>
-            <p class="text-zinc-300 leading-relaxed">A neighborhood café sees strong weekend footfall but empty seats on weekdays, while nearby remote workers looking for a workspace go untapped.</p>
-          </div>
-          <div>
-            <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-2">Proposed Approach</p>
-            <p class="text-zinc-300 leading-relaxed">A hyper-local landing page and ₹499 weekday workspace pass, paired with a measurement plan I designed to practice mapping conversion events to GTM and GA4 as I learn the tools.</p>
-          </div>
-
-          <div class="flex flex-col sm:flex-row gap-4 pt-2">
-            <a href="https://brewhavenproject.netlify.app/" target="_blank" rel="noopener noreferrer"
-               class="scanline-btn inline-flex items-center justify-center gap-2 bg-circuit text-ink font-semibold px-6 py-3.5 text-sm tracking-wide hover:bg-blue-400 transition-colors">
-              View Demo Prototype
-              <span aria-hidden="true">→</span>
-            </a>
-            <button onclick="document.getElementById('measurement-drawer').classList.toggle('hidden')" class="inline-flex items-center justify-center gap-1 border border-line hover:border-signal text-zinc-200 hover:text-signal font-medium px-6 py-3.5 text-sm tracking-wide transition-colors focus:outline-none">
-              View Proposed Measurement Plan ↓
-            </button>
-          </div>
-        </div>
-
-        <!-- Right: code editor -->
-        <div class="border border-line bg-[#0b0b0e] flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-2 px-4 py-3 border-b border-line bg-panel">
-              <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
-              <span class="ml-3 font-mono text-[11px] text-zinc-500">measurement-plan.js — concept, not deployed</span>
-            </div>
-            <pre class="p-5 overflow-x-auto text-[13px] leading-relaxed font-mono"><code data-hl><span class="com">// Brew Haven — practice project</span>
-<span class="kw">const</span> plannedEvent <span class="punc">=</span> <span class="punc">{</span>
-  <span class="prop">event</span><span class="punc">:</span> <span class="str">'lead_conversion'</span><span class="punc">,</span>
-  <span class="prop">business_location</span><span class="punc">:</span> <span class="str">'Indiranagar, BLR'</span><span class="punc">,</span>
-  <span class="prop">lead_type</span><span class="punc">:</span> <span class="str">'Weekday Pass Coupon'</span><span class="punc">,</span>
-  <span class="prop">monetary_value</span><span class="punc">:</span> <span class="num">499.00</span>
-<span class="punc">};</span></code></pre>
-          </div>
-          <div class="px-5 py-4 border-t border-line bg-panel/30">
-            <p class="text-xs text-zinc-500 font-mono leading-relaxed">Planned stack: GTM container → GA4 event → Looker Studio report. Tracking architecture designed for practice framework metrics.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Expandable Image Area inside Brew Haven Card -->
-      <div id="measurement-drawer" class="hidden border-t border-line bg-black/40 p-6 transition-all duration-300">
-        <div class="border border-line rounded-lg overflow-hidden max-w-4xl mx-auto bg-panel shadow-2xl">
-          <div class="bg-[#16161a] px-4 py-2 border-b border-line flex items-center gap-1.5">
-            <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
-            <span class="text-[10px] font-mono text-zinc-500 ml-2 uppercase tracking-wider">brew-haven-dashboard.jpg</span>
-          </div>
-          <img src="brew-haven-dashboard.jpg" alt="Measurement Pipeline Strategy Screenshot" class="w-full h-auto block opacity-95">
-        </div>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-3 pt-2">
+        <a href="https://brewhavenproject.netlify.app/" target="_blank" rel="noopener noreferrer"
+           class="scanline-btn inline-flex items-center justify-center gap-2 bg-circuit text-ink font-semibold px-5 py-3 text-sm tracking-wide hover:bg-blue-400 transition-colors w-full sm:w-auto">
+          View Demo Prototype
+          <span aria-hidden="true">→</span>
+        </a>
+        <button onclick="document.getElementById('ads-drawer').classList.toggle('hidden'); document.getElementById('measurement-drawer').classList.add('hidden')" 
+                class="inline-flex items-center justify-center gap-1 border border-line hover:border-signal text-zinc-200 hover:text-signal font-medium px-5 py-3 text-sm tracking-wide transition-colors focus:outline-none w-full sm:w-auto">
+          View Paid Search Matrix ↓
+        </button>
+        <button onclick="document.getElementById('measurement-drawer').classList.toggle('hidden'); document.getElementById('ads-drawer').classList.add('hidden')" 
+                class="inline-flex items-center justify-center gap-1 border border-line hover:border-signal text-zinc-200 hover:text-signal font-medium px-5 py-3 text-sm tracking-wide transition-colors focus:outline-none w-full sm:w-auto">
+          View Proposed Measurement Plan ↓
+        </button>
       </div>
     </div>
+
+    <div class="border border-line bg-[#0b0b0e] flex flex-col justify-between">
+      <div>
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-line bg-panel">
+          <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+          <span class="ml-3 font-mono text-[11px] text-zinc-500">google-ads-spec.json — character optimized</span>
+        </div>
+        <pre class="p-5 overflow-x-auto text-[13px] leading-relaxed font-mono"><code data-hl><span class="com">// Intent Keywords & Ad Copy Strategy Matrix</span>
+<span class="kw">const</span> searchCampaign <span class="punc">=</span> <span class="punc">{</span>
+  <span class="prop">campaignName</span><span class="punc">:</span> <span class="str">'BLR_Indiranagar_Search_LeadGen_Workspace_2026'</span><span class="punc">,</span>
+  <span class="prop">matchTypes</span><span class="punc">:</span> <span class="punc">[</span><span class="str">'"work cafe indiranagar"'</span><span class="punc">,</span> <span class="str">'[co-working space indiranagar]'</span><span class="punc">]</span><span class="punc">,</span>
+  <span class="prop">headline1</span><span class="punc">:</span> <span class="str">'Brew Haven Work Café'</span><span class="punc">,</span> <span class="com">// 21 / 30 chars</span>
+  <span class="prop">headline2</span><span class="punc">:</span> <span class="str">'Get a ₹499 Weekday Pass'</span><span class="punc">,</span> <span class="com">// 23 / 30 chars</span>
+  <span class="prop">description1</span><span class="punc">:</span> <span class="str">'Tired of WFH distractions? Get a desk, Wi-Fi & 2 premium specialty coffees.'</span> <span class="com">// 86 / 90 chars</span>
+<span class="punc">};</span></code></pre>
+      </div>
+      <div class="px-5 py-4 border-t border-line bg-panel/30">
+        <p class="text-xs text-zinc-500 font-mono leading-relaxed">Framework: Intent mapping to maximize Quality Score. Text condensed to respect Google's strict 30/90 validation guidelines.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="ads-drawer" class="hidden border-t border-line bg-black/40 p-6 transition-all duration-300">
+    <div class="border border-line rounded-lg overflow-hidden max-w-4xl mx-auto bg-panel shadow-2xl p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-line pb-4">
+        <div>
+          <h4 class="text-white font-bold text-base font-mono">Paid Media Keyword-to-Ad Mapping Matrix</h4>
+          <p class="text-zinc-400 text-xs mt-1">Ready-to-import bulk structure configuration sheet optimized for Google Ads Editor.</p>
+        </div>
+        <a href="./downloads/Brew_Haven_Google_Ads_Portfolio.xlsx" download class="font-mono text-xs text-signal border border-signal hover:bg-signal hover:text-ink px-3 py-1.5 transition-colors">
+          Download .XLSX Spec File ↗
+        </a>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs font-mono text-zinc-300 border-collapse">
+          <thead>
+            <tr class="border-b border-line bg-[#16161a] text-zinc-400">
+              <th class="p-3">Ad Group</th>
+              <th class="p-3">Target Keyword & Match Type</th>
+              <th class="p-3">Headlines (1 & 2)</th>
+              <th class="p-3">Description (Max 90 chars)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-line">
+            <tr class="hover:bg-panel/50">
+              <td class="p-3 text-zinc-500">Work-Cafes-Intent</td>
+              <td class="p-3"><span class="text-blue-400">"work cafe indiranagar"</span> <span class="text-zinc-600">(Phrase)</span></td>
+              <td class="p-3">Brew Haven Work Café <span class="text-zinc-600">|</span> Get a ₹499 Weekday Pass</td>
+              <td class="p-3 text-zinc-400">Tired of WFH distractions? Get a desk, Wi-Fi & 2 premium specialty coffees.</td>
+            </tr>
+            <tr class="hover:bg-panel/50">
+              <td class="p-3 text-zinc-500">Work-Cafes-Intent</td>
+              <td class="p-3"><span class="text-blue-400">"cafes with wifi near me"</span> <span class="text-zinc-600">(Phrase)</span></td>
+              <td class="p-3">Brew Haven Work Café <span class="text-zinc-600">|</span> Get a ₹499 Weekday Pass</td>
+              <td class="p-3 text-zinc-400">Tired of WFH distractions? Get a desk, Wi-Fi & 2 premium specialty coffees.</td>
+            </tr>
+            <tr class="hover:bg-panel/50">
+              <td class="p-3 text-zinc-500">Work-Cafes-Intent</td>
+              <td class="p-3"><span class="text-green-400">[co-working space indiranagar]</span> <span class="text-zinc-600">(Exact)</span></td>
+              <td class="p-3">Brew Haven Work Café <span class="text-zinc-600">|</span> Get a ₹499 Weekday Pass</td>
+              <td class="p-3 text-zinc-400">Tired of WFH distractions? Get a desk, Wi-Fi & 2 premium specialty coffees.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="measurement-drawer" class="hidden border-t border-line bg-black/40 p-6 transition-all duration-300">
+    <div class="border border-line rounded-lg overflow-hidden max-w-4xl mx-auto bg-panel shadow-2xl">
+      <div class="bg-[#16161a] px-4 py-2 border-b border-line flex items-center gap-1.5">
+        <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+        <span class="text-[10px] font-mono text-zinc-500 ml-2 uppercase tracking-wider">brew-haven-dashboard.jpg</span>
+      </div>
+      <img src="brew-haven-dashboard.jpg" alt="Measurement Pipeline Strategy Screenshot" class="w-full h-auto block opacity-95">
+    </div>
+  </div>
+</div>
 
     <!-- Project 02 Card: Thread & Theory -->
     <div class="border border-line bg-ink/60">
