@@ -354,55 +354,125 @@
 </div>
 
     <!-- Project 02 Card: Thread & Theory -->
-    <div class="border border-line bg-ink/60">
-      <div class="flex flex-wrap items-center justify-between gap-4 px-6 md:px-10 py-6 border-b border-line">
-        <div class="flex items-center gap-3">
-          <span class="font-mono text-xs text-circuit border border-circuit/40 px-2 py-1">PROJECT 02</span>
-          <h3 class="text-xl md:text-2xl font-bold text-white">Thread &amp; Theory — Premium DTC Apparel Lander</h3>
-        </div>
-        <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Status: Production Live</span>
+<div class="border border-line bg-ink/60">
+  <!-- header -->
+  <div class="flex flex-wrap items-center justify-between gap-4 px-6 md:px-10 py-6 border-b border-line">
+    <div class="flex items-center gap-3">
+      <span class="font-mono text-xs text-signal border border-signal/40 px-2 py-1">PROJECT 02</span>
+      <h3 class="text-xl md:text-2xl font-bold text-white">Thread & Theory — Premium DTC Apparel Lander</h3>
+    </div>
+    <span class="font-mono text-[11px] uppercase tracking-widest text-zinc-500">Status: Production Live</span>
+  </div>
+
+  <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <!-- Left: narrative -->
+    <div class="space-y-8">
+      <p class="text-xs text-zinc-500 leading-relaxed bg-panel border border-line px-4 py-3">
+        A high-converting single-product e-commerce acquisition landing page designed for an elegant minimalist clothing label. Built to capture media buying traffic cleanly and scale performance metrics.
+      </p>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-2">Strategy Framework</p>
+        <p class="text-zinc-300 leading-relaxed">Structured to reduce visual drop-off, optimize Average Order Value (AOV), and deploy raw programmatic data layer capture hooks to accurately feed ad platform optimization networks.</p>
       </div>
 
-      <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <!-- Left Column Info -->
-        <div class="space-y-8">
-          <p class="text-xs text-zinc-500 leading-relaxed bg-panel border border-line px-4 py-3">
-            A high-converting single-product e-commerce acquisition landing page designed for an elegant minimalist clothing label. Built to capture media buying traffic cleanly.
-          </p>
-          <div>
-            <p class="font-mono text-xs uppercase tracking-widest text-zinc-500 mb-2">Strategy Framework</p>
-            <p class="text-zinc-300 leading-relaxed">Structured to reduce visual drop-off, optimize Average Order Value (AOV), and deploy raw programmatic data layer capture hooks to accurately feed ad platform optimization networks.</p>
-          </div>
-          <div class="pt-2">
-            <a href="thread-theory.html"
-               class="scanline-btn inline-flex items-center justify-center gap-2 bg-circuit text-ink font-semibold px-6 py-3.5 text-sm tracking-wide hover:bg-blue-400 transition-colors">
-              Open Live E-com Lander
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Column Tracking Terminal -->
-        <div class="border border-line bg-[#0b0b0e] flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between px-4 py-3 border-b border-line bg-panel text-zinc-500 font-mono text-[11px]">
-              <span>📊 eCom GTM Data Layer Object</span>
-              <span class="text-signal font-bold uppercase tracking-wider text-[9px]">active</span>
-            </div>
-            <pre class="p-5 overflow-x-auto text-[12px] leading-relaxed font-mono text-zinc-300"><code data-hl><span class="com">// Item addition tracker</span>
-window.dataLayer <span class="punc">=</span> window.dataLayer <span class="punc">||</span> <span class="punc">[]</span><span class="punc">;</span>
-window.dataLayer.push<span class="punc">(</span><span class="punc">{</span>
-  <span class="prop">'event'</span><span class="punc">:</span> <span class="str">'add_to_cart'</span><span class="punc">,</span>
-  <span class="prop">'value'</span><span class="punc">:</span> <span class="num">2499.00</span><span class="punc">,</span>
-  <span class="prop">'currency'</span><span class="punc">:</span> <span class="str">'INR'</span>
-<span class="punc">}</span><span class="punc">)</span><span class="punc">;</span></code></pre>
-          </div>
-          <div class="px-5 py-4 border-t border-line bg-panel/30 text-[11px] text-zinc-500 font-mono">
-            Attribution Logic: Configured for Meta Conversion Pixel tracking arrays.
-          </div>
-        </div>
+      <!-- Action Toggles -->
+      <div class="flex flex-col sm:flex-row flex-wrap gap-3 pt-2">
+        <a href="thread-theory.html" class="scanline-btn inline-flex items-center justify-center gap-2 bg-circuit text-ink font-semibold px-5 py-3 text-sm tracking-wide hover:bg-blue-400 transition-colors w-full sm:w-auto">
+          Open Live E-com Lander
+          <span aria-hidden="true">→</span>
+        </a>
+        <button onclick="document.getElementById('meta-ads-drawer').classList.toggle('hidden'); document.getElementById('pixel-drawer').classList.add('hidden')" 
+                class="inline-flex items-center justify-center gap-1 border border-line hover:border-signal text-zinc-200 hover:text-signal font-medium px-5 py-3 text-sm tracking-wide transition-colors focus:outline-none w-full sm:w-auto">
+          View Meta Social Spec ↓
+        </button>
+        <button onclick="document.getElementById('pixel-drawer').classList.toggle('hidden'); document.getElementById('meta-ads-drawer').classList.add('hidden')" 
+                class="inline-flex items-center justify-center gap-1 border border-line hover:border-signal text-zinc-200 hover:text-signal font-medium px-5 py-3 text-sm tracking-wide transition-colors focus:outline-none w-full sm:w-auto">
+          View Tracking Architecture ↓
+        </button>
       </div>
     </div>
+
+    <!-- Right: code editor -->
+    <div class="border border-line bg-[#0b0b0e] flex flex-col justify-between">
+      <div>
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-line bg-panel">
+          <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-zinc-700"></span>
+          <span class="ml-3 font-mono text-[11px] text-zinc-500">📊 eCom GTM Data Layer Object</span>
+        </div>
+        <pre class="p-5 overflow-x-auto text-[13px] leading-relaxed font-mono"><code><span class="com">// Item addition tracker</span>
+window.dataLayer <span>=</span> window.dataLayer <span>||</span> <span>[]</span><span>;</span>
+window.dataLayer.push<span>(</span><span>{</span>
+  <span>'event'</span><span>:</span> <span>'add_to_cart'</span><span>,</span>
+  <span>'value'</span><span>:</span> <span>2499.00</span><span>,</span>
+  <span>'currency'</span><span>:</span> <span>'INR'</span>
+<span>}</span><span>)</span><span>;</span></code></pre>
+      </div>
+      <div class="px-5 py-4 border-t border-line bg-panel/30">
+        <p class="text-xs text-zinc-500 font-mono leading-relaxed">Attribution Logic: Configured for Meta Conversion Pixel tracking arrays to validate acquisition costs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEW DRAWER 1: Meta Ads Creative Specification Sheet -->
+  <div id="meta-ads-drawer" class="hidden border-t border-line bg-black/40 p-6 transition-all duration-300">
+    <div class="border border-line rounded-lg overflow-hidden max-w-4xl mx-auto bg-panel shadow-2xl p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-line pb-4">
+        <div>
+          <h4 class="text-white font-bold text-base font-mono">Paid Social Acquisition Matrix (Meta Ads)</h4>
+          <p class="text-zinc-400 text-xs mt-1">Strategic copy variants mapping customer demographics to targeted site event hooks.</p>
+        </div>
+        <a href="./downloads/Thread_Theory_Meta_Ads_Portfolio.xlsx" download class="font-mono text-xs text-signal border border-signal hover:bg-signal hover:text-ink px-3 py-1.5 transition-colors">
+          Download .XLSX Spec File ↗
+        </a>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs font-mono text-zinc-300 border-collapse">
+          <thead>
+            <tr class="border-b border-line bg-[#16161a] text-zinc-400">
+              <th class="p-3">Ad Set Audience</th>
+              <th class="p-3">Primary Text (Caption Copy)</th>
+              <th class="p-3">Headline</th>
+              <th class="p-3">Pixel Trigger Link</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-line">
+            <tr class="hover:bg-panel/50">
+              <td class="p-3 text-zinc-500">TOFU_Interest_QuietLuxury</td>
+              <td class="p-3 text-zinc-400">Timeless design meets exceptional craftsmanship. Meet the capsule collection crafted entirely from premium organic fabrics that match your standard...</td>
+              <td class="p-3">Effortless Elegance, Redefined</td>
+              <td class="p-3 text-blue-400">view_item</td>
+            </tr>
+            <tr class="hover:bg-panel/50">
+              <td class="p-3 text-zinc-500">TOFU_Interest_QuietLuxury</td>
+              <td class="p-3 text-zinc-400">Buy less, choose well. Our premium minimalist collection is designed to last years, not seasons. Responsibly sourced materials designed for maximum value-per-wear comfort.</td>
+              <td class="p-3">Timeless Premium Essentials</td>
+              <td class="p-3 text-blue-400">view_item</td>
+            </tr>
+            <tr class="hover:bg-panel/50">
+              <td class="p-3 text-zinc-500">MOFU_BOFU_Retargeting_30D</td>
+              <td class="p-3 text-zinc-400">Your new wardrobe constants are waiting. Complete your checkout today and experience premium construction designed to fit impeccably. Enjoy complimentary shipping on your first order.</td>
+              <td class="p-3">Complete Your Collection</td>
+              <td class="p-3 text-green-400">add_to_cart</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORIGINAL DRAWER 2: Hidden container for future Tracking Flow Diagram/Code if needed -->
+  <div id="pixel-drawer" class="hidden border-t border-line bg-black/40 p-6 transition-all duration-300">
+    <div class="border border-line rounded-lg overflow-hidden max-w-4xl mx-auto bg-panel p-6 shadow-2xl">
+      <h4 class="text-white font-bold text-base font-mono mb-2">Tracking Architecture Framework</h4>
+      <p class="text-zinc-400 text-xs font-mono leading-relaxed">
+        The application pushes clean transactional parameters onto the global window object. This allows Google Tag Manager to listen dynamically for custom triggers, forwarding server-side server event hits to Meta Ads Manager to suppress attribution drop-off thresholds.
+      </p>
+    </div>
+  </div>
+</div>
 
   </div>
 </section>
